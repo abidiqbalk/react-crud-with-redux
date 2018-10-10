@@ -16,6 +16,8 @@ export default (state = initialState, action) => {
       let newItems = state.items.filter((f) => f.id !== action.payload.id)
       newItems.splice(index, 0, action.payload)
       return {...state,items:newItems}      
+    case actionTypes.SEARCH_ITEM:
+      return {items:action.payload}  
     default:
       return state;
   }
